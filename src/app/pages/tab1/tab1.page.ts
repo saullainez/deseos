@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Lista } from 'src/app/models/lista.model';
 import { DeseosService } from 'src/app/services/deseos.service';
 
 @Component({
@@ -8,6 +9,10 @@ import { DeseosService } from 'src/app/services/deseos.service';
 })
 export class Tab1Page {
 
-  constructor(public deseosService: DeseosService) {}
+  listas: Lista[] = [];
+  constructor(public deseosService: DeseosService) {
+    this.listas = this.deseosService.getLists();
+    console.log(this.listas);
+  }
 
 }

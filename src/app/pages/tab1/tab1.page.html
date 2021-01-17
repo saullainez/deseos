@@ -1,11 +1,17 @@
 <ion-header [translucent]="true" class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
       Pendientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-
+<ion-content [fullscreen]="true" color="dark">
+  <ion-list color="dark">
+    <ion-item *ngFor="let lista of listas" detail color="dark">
+      <ion-label>
+        {{lista.title}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
