@@ -9,9 +9,7 @@ export class DeseosService {
   listas: Lista[] = [];
 
   constructor() { 
-    const lista1 = new Lista('Test 1');
-    const lista2 = new Lista('Test 2');
-    this.listas.push(lista1, lista2);
+    this.cargarStorage();
   }
 
   getLists():Lista[]{
@@ -21,5 +19,15 @@ export class DeseosService {
   crearLista(title:string){
     const nuevaLista = new Lista(title);
     this.listas.push(nuevaLista);
+    this.guardarStorage();
+  }
+
+  guardarStorage(){
+    localStorage.setItem('data', JSON.stringify(this.listas));
+  }
+
+  cargarStorage(){
+    this.listas = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
+    
   }
 }
