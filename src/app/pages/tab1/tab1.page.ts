@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Lista } from 'src/app/models/lista.model';
 import { DeseosService } from 'src/app/services/deseos.service';
 
 @Component({
@@ -11,9 +10,7 @@ import { DeseosService } from 'src/app/services/deseos.service';
 })
 export class Tab1Page {
 
-  listas: Lista[] = [];
   constructor(public deseosService: DeseosService, private router:Router, private alertController: AlertController) {
-    this.listas = this.deseosService.getLists();
   }
 
   async agregarLista(){
@@ -47,11 +44,6 @@ export class Tab1Page {
     });
 
     alert.present();
-  }
-
-  listaSeleccionada(lista:Lista){
-    const idLista = lista.id;
-    this.router.navigateByUrl(`tabs/tab1/agregar/${idLista}`);
   }
 
 }
