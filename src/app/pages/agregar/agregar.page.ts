@@ -44,4 +44,9 @@ export class AgregarPage implements OnInit {
     this.deseosService.guardarStorage();
   }
 
+  borrar(index:number){
+    this.lista.items.splice(index, 1);
+    this.deseosService.guardarStorage();
+  }
+
 }
