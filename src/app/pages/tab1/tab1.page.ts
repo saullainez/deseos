@@ -49,4 +49,9 @@ export class Tab1Page {
     alert.present();
   }
 
+  listaSeleccionada(lista:Lista){
+    const idLista = lista.id;
+    this.router.navigateByUrl(`tabs/tab1/agregar/${idLista}`);
+  }
+
 }
