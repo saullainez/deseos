@@ -10,7 +10,7 @@ import { DeseosService } from 'src/app/services/deseos.service';
 })
 export class ListasComponent implements OnInit {
   listas: Lista[] = [];
-  @Input() terminada = true;
+  @Input() terminada;
   constructor(public deseosService: DeseosService, private router:Router) { 
     this.listas = this.deseosService.getLists();
   }
